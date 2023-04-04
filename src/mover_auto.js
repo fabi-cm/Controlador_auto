@@ -2,7 +2,8 @@ function mover_auto(cadena){
     if (cadena === "" || cadena === " "){
         return "Cadena vacia";
     }
-    return 0;
+    let matriz = cadena.split(",")
+    return toString(matriz);
 }
 
 export default mover_auto;
