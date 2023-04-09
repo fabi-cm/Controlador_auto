@@ -3,6 +3,7 @@ function mover_auto(comandos){
     let matriz;
     let posicion;
     let direccion;
+    let movimentos;
     
     if (comandos === "" || comandos === " "){
         return "Cadena vacia";
@@ -10,12 +11,19 @@ function mover_auto(comandos){
     else if (datos.length < 2){
         return `${matriz}`;
     }
+    else if (datos.length < 3){
+        matriz = extraer_matriz(datos[0])
+        posicion = extraer_posicion(datos[1])
+        direccion = extraer_direccion(datos[1])
+        return `${matriz},${posicion} ${direccion}`;
+    }
     
     matriz = extraer_matriz(datos[0])
     posicion = extraer_posicion(datos[1])
     direccion = extraer_direccion(datos[1])
+    movimentos = datos[2]
     
-    return `${matriz},${posicion} ${direccion}`;
+    return `${matriz},${posicion} ${direccion}, ${movimentos}`;
 }
 
 function extraer_matriz(datos){
