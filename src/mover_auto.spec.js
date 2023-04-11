@@ -14,8 +14,8 @@ describe("Mover un auto", () => {
   it('El pibe puede ingresar los comandos para el auto como una cadena de caracteres que consiste en las letras "I" (Izquierda), "D" (Derecha) y "A" (Avanzar)', () => {
     expect(mover_auto("5,5/1,2N/IAIAIAIAA").toString("{5,5}, {1,2 N}, {IAIAIAIAA}"));
   });
-  xit('La aplicación debe devolver la posición final del auto después de ejecutar los comandos en formato "X, Y, D"', () => {
-    expect(mover_auto("1,3").toString("[1,3]"));
+  it('La aplicación debe devolver la posición final del auto después de ejecutar los comandos', () => {
+    expect(mover_auto("5,5/1,2N/IAIAIAIAA").toString("1,3 N"));
   });
   xit("La aplicación debe validar que la dimensión del área de juego sea mayor a cero en ambas dimensiones.", () => {
     expect(mover_auto("1,3").toString("[1,3]"));
