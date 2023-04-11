@@ -69,10 +69,11 @@ function extraer_direccion(datos){
 }
 
 function mostrar_datos(matriz,posicion,direccion,movimentos,posicion_final){
-  return `Posicion inicial: ${posicion} ${direccion}
-  Comandos: ${matriz}
-            ${posicion} ${direccion}
-            ${movimentos}
+  return `Posicion inicial: ${posicion} ${direccion} <br />
+  Comandos: <br /> 
+    ${matriz} <br />
+    ${posicion} ${direccion} <br />
+    ${movimentos} <br />
 Posicion final: ${posicion_final}`
 }
 export default mover_auto;
