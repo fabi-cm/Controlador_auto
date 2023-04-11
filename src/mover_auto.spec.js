@@ -23,13 +23,10 @@ describe("Mover un auto", () => {
   xit("La aplicación debe validar que la posición inicial del auto se encuentre dentro del área de juego.", () => {
     expect(mover_auto("1,3").toString("[1,3]"));
   });
-  xit('La aplicación debe validar que los comandos ingresados para cada auto solo contengan las letras "I", "D" y "A"', () => {
+  xit('La aplicación debe validar que los comandos ingresados para el auto solo contengan las letras "I", "D" y "A"', () => {
     expect(mover_auto("1,3").toString("[1,3]"));
   });
-  xit("Si se ingresa un comando inválido, la aplicación debe mostrar un mensaje de error indicando el problema", () => {
-    expect(mover_auto("1,3").toString("[1,3]"));
-  });
-  xit("La posición inicial y final del auto deben ser claramente visibles en la interfaz gráfica", () => {
+  xit("Si se ingresa un comando inválido, la aplicación debe mostrar un mensaje de error", () => {
     expect(mover_auto("1,3").toString("[1,3]"));
   });
 });
