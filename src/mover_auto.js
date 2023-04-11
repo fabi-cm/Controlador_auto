@@ -46,8 +46,8 @@ function mover_auto(comandos){
         }
       }
     }
-    
-    return`${x},${y} ${direccion}`;
+    const posicion_final = `${x},${y} ${direccion}`
+    return mostrar_datos(matriz,posicion,direccion,movimentos,posicion_final);
     //return `${matriz},${posicion} ${direccion}, ${movimentos}`;
 }
 
@@ -68,4 +68,11 @@ function extraer_direccion(datos){
     return direccion
 }
 
+function mostrar_datos(matriz,posicion,direccion,movimentos,posicion_final){
+  return `Posicion inicial: ${posicion} ${direccion}
+  Comandos: ${matriz}
+            ${posicion} ${direccion}
+            ${movimentos}
+Posicion final: ${posicion_final}`
+}
 export default mover_auto;
