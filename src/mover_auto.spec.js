@@ -46,9 +46,12 @@ describe("Mover un auto", () => {
   it('La aplicación debe devolver la posición final del auto después de ejecutar los comandos', () => {
     expect(mover_auto("5,5/2,2N/ADAAD").toString("4,3 N"));
   });
-  
+
   it('El usuario puede ingresar los comandos para el auto como una cadena de caracteres J para saltar', () => {
-    expect(mover_auto("5,5/2,2N/JJ,").toString("4,2 N"));
+    expect(mover_auto("5,5/2,2N/JJ").toString("4,2 N"));
   });
 
+  it('El usuario puede ingresar los comandos para el auto como una cadena de caracteres J para saltar', () => {
+    expect(mover_auto("5,5/1,2E/AJ").toString("4,2 N"));
+  });
 });

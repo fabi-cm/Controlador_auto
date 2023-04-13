@@ -58,7 +58,14 @@ function mover_auto(comandos){
           y = y2;
         }
       }
-  
+      else if(instruccion === "J"){
+        const x3 = x + x + dx;
+        const y3 = y + y + dx;
+        if(0 <= x3 && x3 <= matriz[0] && 0 <= y3 && y3 <= matriz[1]){
+           x = x3;
+           y = y3;
+        }
+      }
     }
     const posicion_final = `${x},${y} ${direccion}`
     return mostrar_datos(matriz,posicion,direccion,movimentos,posicion_final);
