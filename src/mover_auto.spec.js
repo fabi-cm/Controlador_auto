@@ -58,7 +58,10 @@ describe("Mover un auto", () => {
   it('Prueba de límites de la matriz (tanto en x como en y), de manera horizontal', () => {
     expect(mover_auto("5,5/2,2E/AAAA").toString("0,2 E"));
   });
-  it('Prueba de límites de la matriz con JUMP en y', () => {
+  it('Prueba de límites de la matriz con JUMP en Y', () => {
     expect(mover_auto("5,5/2,2N/AAAAJ").toString("2,2 N"));
+  });
+  it('Prueba de límites de la matriz con JUMP en X', () => {
+    expect(mover_auto("5,5/1,2E/AAAAAAJ").toString("3,2 E"));
   });
 });
