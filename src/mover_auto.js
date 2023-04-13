@@ -42,12 +42,7 @@ function mover_auto(comandos){
       if (instruccion === "J") {
         x2 = x + dx;
         y2 = y + dy;
-        if (y2 > matriz[1]){
-          y2 = 0;
-        }
-        if (x2 > matriz[0]){
-          x2 = 0;
-        }
+        [x2, y2] = mundo(x2,y2,matriz)
         if (0 <= x2 && x2 <= matriz[0] && 0 <= y2 && y2 <= matriz[1]) {
           x = x2;
           y = y2;
@@ -56,12 +51,7 @@ function mover_auto(comandos){
       if (instruccion === "J") {
         x2 = x + dx;
         y2 = y + dy;
-        if (y2 > matriz[1]){
-          y2 = 0;
-        }
-        if (x2 > matriz[0]){
-          x2 = 0;
-        }
+        [x2, y2] = mundo(x2,y2,matriz)
         if (0 <= x2 && x2 <= matriz[0] && 0 <= y2 && y2 <= matriz[1]) {
           x = x2;
           y = y2;
@@ -74,12 +64,7 @@ function mover_auto(comandos){
       } else if (instruccion === "A") {
         x2 = x + dx;
         y2 = y + dy;
-        if (y2 > matriz[1]){
-          y2 = 0;
-        }
-        if (x2 > matriz[0]){
-          x2 = 0;
-        }
+        [x2, y2] = mundo(x2,y2,matriz)
         if (0 <= x2 && x2 <= matriz[0] && 0 <= y2 && y2 <= matriz[1]) {
           x = x2;
           y = y2;
@@ -125,4 +110,13 @@ function validar_matriz(matriz){
   return validacion;
 }
 
+function mundo(x2, y2, matriz){
+  if (y2 > matriz[1]){
+    y2 = 0;
+  }
+  if (x2 > matriz[0]){
+    x2 = 0;
+  }
+  return [x2, y2]
+}
 export default mover_auto;
