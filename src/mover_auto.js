@@ -35,6 +35,10 @@ function mover_auto(comandos){
     if (validar_posicion(matriz,posicion) === false){
       return 'Posicion invalida'
     }
+    if(validar_direccion(direccion) === false){
+      return 'Direccion invalida'
+    }
+    
     let [x, y] = posicion;
     let [dx, dy] = orientaciones[direccion];
     
@@ -94,6 +98,14 @@ function validar_matriz(matriz){
 function validar_posicion(matriz, posicion){
   let validacion = true
   if (posicion[0] > matriz[0] || posicion[1] > matriz[1]){
+    validacion = false;
+  }
+  return validacion;
+}
+
+function validar_direccion(direccion){
+  let validacion = true
+  if (direccion != 'N' || direccion != 'S' || direccion != 'O' || direccion != 'E'){
     validacion = false;
   }
   return validacion;
