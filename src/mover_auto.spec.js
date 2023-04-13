@@ -33,6 +33,9 @@ describe("Mover un auto", () => {
     expect(mover_auto("5,5/1,3K/AIAIA").toString("Direccion invalida"));
   });
 
+  it('Validacion de los movimienos no debe ser diferente de I, D, A', () => {
+    expect(mover_auto("5,5/1,3K/AIAIA").toString("Movimientos invalidas"));
+  });
 
 // La aplicación debe validar que los comandos ingresados para el auto solo contengan las letras "I", "D" y "A"
 });

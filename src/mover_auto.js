@@ -38,7 +38,10 @@ function mover_auto(comandos){
     if(validar_direccion(direccion) === false){
       return 'Direccion invalida'
     }
-    
+    if(validar_movimiento(movimentos === false)){
+      return 'Movimientos invalidas'
+    }
+
     let [x, y] = posicion;
     let [dx, dy] = orientaciones[direccion];
     
@@ -107,6 +110,16 @@ function validar_direccion(direccion){
   let validacion = true
   if (direccion != 'N' || direccion != 'S' || direccion != 'O' || direccion != 'E'){
     validacion = false;
+  }
+  return validacion;
+}
+
+function validar_movimiento(movimentos){
+  let validacion = true;
+  for (const instruccion of movimentos) {
+    if (instruccion != "I" || instruccion != "D" || instruccion != "A") {
+      return false;
+    }
   }
   return validacion;
 }
