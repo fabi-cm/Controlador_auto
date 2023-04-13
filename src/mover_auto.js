@@ -45,18 +45,20 @@ function mover_auto(comandos){
     let [x, y] = posicion;
     let [dx, dy] = orientaciones[direccion];
     
+    let x2;
+    let y2;
     for (const instruccion of movimentos) {
       if (instruccion === "J") {
-        const x2 = x + dx;
-        const y2 = y + dy;
+        x2 = x + dx;
+        y2 = y + dy;
         if (0 <= x2 && x2 <= matriz[0] && 0 <= y2 && y2 <= matriz[1]) {
           x = x2;
           y = y2;
         }
       }
       if (instruccion === "J") {
-        const x2 = x + dx;
-        const y2 = y + dy;
+        x2 = x + dx;
+        y2 = y + dy;
         if (0 <= x2 && x2 <= matriz[0] && 0 <= y2 && y2 <= matriz[1]) {
           x = x2;
           y = y2;
@@ -67,8 +69,14 @@ function mover_auto(comandos){
       } else if (instruccion === "D") {
         [dx, dy] = [dy, -dx];
       } else if (instruccion === "A") {
-        const x2 = x + dx;
-        const y2 = y + dy;
+        x2 = x + dx;
+        y2 = y + dy;
+        if (y2 > matriz[1]){
+          y2 = 0;
+        }
+        if (x2 > matriz[0]){
+          x2 = 0;
+        }
         if (0 <= x2 && x2 <= matriz[0] && 0 <= y2 && y2 <= matriz[1]) {
           x = x2;
           y = y2;
@@ -113,7 +121,6 @@ function validar_matriz(matriz){
   }
   return validacion;
 }
-
 // function validar_posicion(matriz, posicion){
 //   let validacion = true
 //   if (posicion[0] > matriz[0] || posicion[1] > matriz[1]){

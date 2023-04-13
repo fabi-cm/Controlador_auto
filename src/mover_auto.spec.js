@@ -51,4 +51,11 @@ describe("Mover un auto", () => {
   it('Implementar un nuevo comando de movimiento J (JUMP), avansa 2 posiciones a la vez', () => {
     expect(mover_auto("5,5/1,2N/IAIAIAIJ").toString("1,3 N"));
   });
+
+  it('Cuando el auto llega a alguno de los límites de la matriz (tanto en x como en y), ahora podrá seguir avanzando continuando desde el inicio', () => {
+    expect(mover_auto("5,5/1,2N/AAAA").toString("1,0 N"));
+  });
+  it('Prueba de límites de la matriz (tanto en x como en y), de manera horizontal', () => {
+    expect(mover_auto("5,5/2,2E/AAAA").toString("0,2 E"));
+  });
 });
