@@ -46,4 +46,9 @@ describe("Mover un auto", () => {
     expect(mover_auto("5,5/2,2N/ADAAD").toString("4,3 N"));
   });
 
+  // Examen 2
+
+  it('Implementar un nuevo comando de movimiento J (JUMP), avansa 2 posiciones a la vez', () => {
+    expect(mover_auto("5,5/1,2N/IAIAIAIJ").toString("1,3 N"));
+  });
 });

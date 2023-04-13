@@ -46,6 +46,22 @@ function mover_auto(comandos){
     let [dx, dy] = orientaciones[direccion];
     
     for (const instruccion of movimentos) {
+      if (instruccion === "J") {
+        const x2 = x + dx;
+        const y2 = y + dy;
+        if (0 <= x2 && x2 <= matriz[0] && 0 <= y2 && y2 <= matriz[1]) {
+          x = x2;
+          y = y2;
+        }
+      }
+      if (instruccion === "J") {
+        const x2 = x + dx;
+        const y2 = y + dy;
+        if (0 <= x2 && x2 <= matriz[0] && 0 <= y2 && y2 <= matriz[1]) {
+          x = x2;
+          y = y2;
+        }
+      }
       if (instruccion === "I") {
         [dx, dy] = [-dy, dx];
       } else if (instruccion === "D") {
