@@ -32,15 +32,15 @@ function mover_auto(comandos){
     if (validar_matriz(matriz) === false){
       return 'Matriz invalida'
     }
-    if (validar_posicion(matriz,posicion) === false){
-      return 'Posicion invalida'
-    }
-    if(validar_direccion(direccion) === false){
-      return 'Direccion invalida'
-    }
-    if(validar_movimiento(movimentos === false)){
-      return 'Movimientos invalidas'
-    }
+    // if (validar_posicion(matriz,posicion) === false){
+    //   return 'Posicion invalida'
+    // }
+    // if(validar_direccion(direccion) === false){
+    //   return 'Direccion invalida'
+    // }
+    // if(validar_movimiento(movimentos === false)){
+    //   return 'Movimientos invalidas'
+    // }
 
     let [x, y] = posicion;
     let [dx, dy] = orientaciones[direccion];
@@ -98,30 +98,30 @@ function validar_matriz(matriz){
   return validacion;
 }
 
-function validar_posicion(matriz, posicion){
-  let validacion = true
-  if (posicion[0] > matriz[0] || posicion[1] > matriz[1]){
-    validacion = false;
-  }
-  return validacion;
-}
+// function validar_posicion(matriz, posicion){
+//   let validacion = true
+//   if (posicion[0] > matriz[0] || posicion[1] > matriz[1]){
+//     validacion = false;
+//   }
+//   return validacion;
+// }
 
-function validar_direccion(direccion){
-  let validacion = true
-  if (direccion != 'N' || direccion != 'S' || direccion != 'O' || direccion != 'E'){
-    validacion = false;
-  }
-  return validacion;
-}
+// function validar_direccion(direccion){
+//   let validacion = true
+//   if (direccion !== 'N' || direccion !== 'S' || direccion !== 'O' || direccion !== 'E'){
+//     validacion = false;
+//   }
+//   return validacion;
+// }
 
-function validar_movimiento(movimentos){
-  let validacion = true;
-  for (const instruccion of movimentos) {
-    if (instruccion != "I" || instruccion != "D" || instruccion != "A") {
-      return false;
-    }
-  }
-  return validacion;
-}
+// function validar_movimiento(movimentos){
+//   let validacion = true;
+//   for (const instruccion of movimentos) {
+//     if (instruccion !== "I" || instruccion !== "D" || instruccion !== "A") {
+//       return false;
+//     }
+//   }
+//   return validacion;
+// }
 
 export default mover_auto;

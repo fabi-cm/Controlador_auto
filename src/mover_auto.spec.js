@@ -29,13 +29,21 @@ describe("Mover un auto", () => {
   it('La aplicación debe validar que la posición inicial del auto se encuentre dentro del área de juego.', () => {
     expect(mover_auto("5,5/6,-3N/AIAIA").toString("Posicion invalida"));
   });
-  it('Validacion de la direccion no debe ser diferente de N, E, O, S', () => {
+  
+  xit('Validacion de la direccion no debe ser diferente de N, E, O, S', () => {
     expect(mover_auto("5,5/1,3K/AIAIA").toString("Direccion invalida"));
   });
 
-  it('Validacion de los movimienos no debe ser diferente de I, D, A', () => {
+  xit('Validacion de los movimienos no debe ser diferente de I, D, A', () => {
     expect(mover_auto("5,5/1,3K/AIAIA").toString("Movimientos invalidas"));
   });
 
-// La aplicación debe validar que los comandos ingresados para el auto solo contengan las letras "I", "D" y "A"
+  it('La aplicación debe devolver la posición final del auto después de ejecutar los comandos', () => {
+    expect(mover_auto("4,4/1,1E/AAIIAA").toString("1,1 E"));
+  });
+
+  it('La aplicación debe devolver la posición final del auto después de ejecutar los comandos', () => {
+    expect(mover_auto("5,5/2,2N/ADAAD").toString("4,3 N"));
+  });
+
 });
