@@ -11,7 +11,6 @@ function mover_auto(comandos){
         E: [1, 0], 
         O: [-1, 0],
     }
-
     if (comandos === "" || comandos === " "){
         return "Cadena vacia";
     }
@@ -29,9 +28,14 @@ function mover_auto(comandos){
     posicion = extraer_posicion(datos[1])
     direccion = extraer_direccion(datos[1])
     movimentos = datos[2]
-    
+
+    if (validar_matriz(matriz) === false){
+      return 'Matriz invalida'
+    }
+
     let [x, y] = posicion;
     let [dx, dy] = orientaciones[direccion];
+    
     for (const instruccion of movimentos) {
       if (instruccion === "I") {
         [dx, dy] = [-dy, dx];
@@ -76,4 +80,13 @@ function mostrar_datos(matriz,posicion,direccion,movimentos,posicion_final){
     ${movimentos} <br />
 Posicion final: ${posicion_final}`
 }
+
+function validar_matriz(matriz){
+  let validacion = true
+  if (matriz[0] <= 0 && matriz[1] <= 0){
+    validacion = false;
+  }
+  return validacion;
+}
+
 export default mover_auto;
