@@ -58,6 +58,7 @@ function mover_auto(comandos){
           y = y2;
         }
       }
+  
     }
     const posicion_final = `${x},${y} ${direccion}`
     return mostrar_datos(matriz,posicion,direccion,movimentos,posicion_final);
@@ -80,6 +81,7 @@ function extraer_direccion(datos){
     let direccion = limpiar_datos[limpiar_datos.length - 1]
     return direccion
 }
+
 
 function mostrar_datos(matriz,posicion,direccion,movimentos,posicion_final){
   return `Posicion inicial: ${posicion} ${direccion} <br />

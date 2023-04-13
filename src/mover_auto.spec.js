@@ -11,6 +11,7 @@ describe("Mover un auto", () => {
   it('El pibe puede ingresar la posición inicial del auto en formato "matriz/X, Y, D", donde "D" es la orientación', () => {
     expect(mover_auto("5,5/1,2N").toString("{5,5}, {1,2 N}"));
   });
+  
   it('El pibe puede ingresar los comandos para el auto como una cadena de caracteres que consiste en las letras "I" (Izquierda), "D" (Derecha) y "A" (Avanzar)', () => {
     expect(mover_auto("5,5/1,2N/IAIAIAIAA").toString("{5,5}, {1,2 N}, {IAIAIAIAA}"));
   });
@@ -44,6 +45,10 @@ describe("Mover un auto", () => {
 
   it('La aplicación debe devolver la posición final del auto después de ejecutar los comandos', () => {
     expect(mover_auto("5,5/2,2N/ADAAD").toString("4,3 N"));
+  });
+  
+  it('El usuario puede ingresar los comandos para el auto como una cadena de caracteres J para saltar', () => {
+    expect(mover_auto("5,5/2,2N/JJ,").toString("4,2 N"));
   });
 
 });
