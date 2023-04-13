@@ -32,15 +32,6 @@ function mover_auto(comandos){
     if (validar_matriz(matriz) === false){
       return 'Matriz invalida'
     }
-    // if (validar_posicion(matriz,posicion) === false){
-    //   return 'Posicion invalida'
-    // }
-    // if(validar_direccion(direccion) === false){
-    //   return 'Direccion invalida'
-    // }
-    // if(validar_movimiento(movimentos === false)){
-    //   return 'Movimientos invalidas'
-    // }
 
     let [x, y] = posicion;
     let [dx, dy] = orientaciones[direccion];
@@ -51,6 +42,12 @@ function mover_auto(comandos){
       if (instruccion === "J") {
         x2 = x + dx;
         y2 = y + dy;
+        if (y2 > matriz[1]){
+          y2 = 0;
+        }
+        if (x2 > matriz[0]){
+          x2 = 0;
+        }
         if (0 <= x2 && x2 <= matriz[0] && 0 <= y2 && y2 <= matriz[1]) {
           x = x2;
           y = y2;
@@ -59,6 +56,12 @@ function mover_auto(comandos){
       if (instruccion === "J") {
         x2 = x + dx;
         y2 = y + dy;
+        if (y2 > matriz[1]){
+          y2 = 0;
+        }
+        if (x2 > matriz[0]){
+          x2 = 0;
+        }
         if (0 <= x2 && x2 <= matriz[0] && 0 <= y2 && y2 <= matriz[1]) {
           x = x2;
           y = y2;
@@ -121,30 +124,5 @@ function validar_matriz(matriz){
   }
   return validacion;
 }
-// function validar_posicion(matriz, posicion){
-//   let validacion = true
-//   if (posicion[0] > matriz[0] || posicion[1] > matriz[1]){
-//     validacion = false;
-//   }
-//   return validacion;
-// }
-
-// function validar_direccion(direccion){
-//   let validacion = true
-//   if (direccion !== 'N' || direccion !== 'S' || direccion !== 'O' || direccion !== 'E'){
-//     validacion = false;
-//   }
-//   return validacion;
-// }
-
-// function validar_movimiento(movimentos){
-//   let validacion = true;
-//   for (const instruccion of movimentos) {
-//     if (instruccion !== "I" || instruccion !== "D" || instruccion !== "A") {
-//       return false;
-//     }
-//   }
-//   return validacion;
-// }
 
 export default mover_auto;
