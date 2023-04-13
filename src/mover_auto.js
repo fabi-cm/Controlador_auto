@@ -58,12 +58,12 @@ function mover_auto(comandos){
           y = y2;
         }
       }
-      else if(instruccion === "J"){
-        const x3 = x + x + dx;
-        const y3 = y + y + dx;
-        if(0 <= x3 && x3 <= matriz[0] && 0 <= y3 && y3 <= matriz[1]){
-           x = x3;
-           y = y3;
+        else if(instruccion === "J"){
+        const saltoX = x + x + dx;
+        const saltoY = y + y + dx;
+        if(0 <= saltoX && saltoX <= matriz[0] && 0 <= saltoY && saltoY <= matriz[1]){
+           x = saltoX;
+           y = saltoY;
         }
       }
     }
@@ -105,6 +105,10 @@ function validar_matriz(matriz){
     validacion = false;
   }
   return validacion;
+}
+
+function matriz_circular(matriz){
+  
 }
 
 // function validar_posicion(matriz, posicion){
